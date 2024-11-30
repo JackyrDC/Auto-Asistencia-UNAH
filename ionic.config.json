@@ -1,0 +1,7 @@
+{
+  "name": "Auto-Asistencia-UNAH",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
