@@ -14,7 +14,7 @@ export class AuthService{
                 params: {
                     db: "prueba11",
                     login: "prueba11@gmail.com",
-                    password: "hola123"
+                    password: "hola"
                 }
             },
             headers: {
