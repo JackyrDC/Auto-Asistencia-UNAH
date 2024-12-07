@@ -29,9 +29,9 @@ export class AuthService {
             jsonrpc: '2.0',
             method: 'call',
             params: {
-              db: 'elmer',
-              login: username,
-              password: password
+              db: 'prueba11',
+              login: "prueba11@gmail.com",
+              password: "hola123"
             }
           },
           headers: { 'Content-Type': 'application/json' }
