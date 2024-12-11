@@ -5,6 +5,8 @@ const UserHeader: React.FC = () => {
   const authService = new AuthService(); // Instancia del servicio de autenticación
   const [username, setUsername] = useState<string | null>(null);
 
+  authService.login('prueba11@gmail.com','hola123');
+
   useEffect(() => {
     console.log('UserHeader mounted');
     console.log('authService', authService);

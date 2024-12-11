@@ -9,7 +9,6 @@ export class AuthService {
     constructor() {
       this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') ?? '{}'));
       this.currentUser = this.currentUserSubject.asObservable();
-      console.log('currentUser', this.currentUser);
     }
 
     public get currentUserValue() {
@@ -20,9 +19,9 @@ export class AuthService {
         console.log('login', username, password);
         //Identifica si la plataforma es web o app
         const baseUrl = Capacitor.getPlatform() === 'web' 
-          ? import.meta.env.VITE_SESSION_URL
+          ? '/api/auth' // URL del servidor Odoo
           : import.meta.env.VITE_SESSION_URL 
-    
+          console.log('baseUrl', baseUrl);
         return from(CapacitorHttp.post({
           url: baseUrl,
           data: {
@@ -30,11 +29,11 @@ export class AuthService {
             method: 'call',
             params: {
               db: 'prueba11',
-              login: "prueba11@gmail.com",
-              password: "hola123"
+              login: "username",
+              password: "password"
             }
           },
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         })).pipe(
           map((response) => {
             console.log('Respuesta del servidor:', response);

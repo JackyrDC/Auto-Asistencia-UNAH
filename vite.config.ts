@@ -14,5 +14,19 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
-  }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: "http://ad.odis.in:8090", // URL del servidor Odoo
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // Remueve el prefijo "/api"
+      },
+      '/api/auth': {
+        target: "htp://ad.odis.in:8090/web/session/authenticate",// URL del servidor Odoo
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/auth/, ''), // Remueve el prefijo "/api"
+      },
+    },
+  },
 })

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import UserHeader from '../components/User';  
 import './Home.css';
 
@@ -7,8 +7,9 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>¡Listas Ya!</IonTitle>
         </IonToolbar>
+        <IonButton routerLink="/login">Login</IonButton>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">

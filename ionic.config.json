@@ -3,5 +3,15 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "react-vite"
+  "type": "react-vite",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://www.ad.odis.in:8095"
+    },
+    {
+      "path": "/api/auth",
+      "proxyUrl": "http://www.ad.odis.in:8095/web/session/authenticate"
+    }
+  ]
 }
